@@ -3,36 +3,98 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mo phong dinh li gioi han trung tam">
-    <title>Mo phong CLT</title>
+    <meta name="description" content="Mô phỏng định lý giới hạn trung tâm - Trực quan hóa dữ liệu">
+    <title>Mô phỏng Định lý Giới hạn Trung tâm (CLT)</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
 </head>
 <body>
+
+    <!-- Header Section -->
     <header class="hero">
-        <div class="container">
-            <p class="eyebrow">LAP TRINH PYTHON NANG CAO</p>
-            <h1>Dinh li Gioi han Trung tam</h1>
-            <p>Quan sat phan phoi cua trung binh mau khi n tang.</p>
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container hero-content">
+            <span class="eyebrow"><i class="fa-solid fa-code"></i> LẬP TRÌNH PYTHON NÂNG CAO</span>
+            <h1>Định lý Giới hạn Trung tâm</h1>
+            <p>Khám phá cách phân phối của trung bình mẫu tiến về dạng hình chuông (Phân phối chuẩn) khi kích thước mẫu $n$ tăng lên.</p>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="container grid">
+        <!-- Video Section -->
         <section class="card video-card">
-            <h2>Video mo phong</h2>
-            <video controls playsinline preload="metadata" aria-label="Video mo phong dinh li gioi han trung tam">
-                <source src="{{ url_for('static', path='/video/video.mp4') }}" type="video/mp4">
-                Trinh duyet cua ban khong ho tro video HTML5.
-            </video>
+            <div class="card-header">
+                <h2><i class="fa-solid fa-circle-play"></i> Video mô phỏng</h2>
+                <span class="badge">Trực quan hóa</span>
+            </div>
+            <div class="video-wrapper">
+                <video controls playsinline preload="metadata" aria-label="Video mô phỏng định lý giới hạn trung tâm">
+                    <source src="{{ url_for('static', path='/video/video.mp4') }}" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video HTML5.
+                </video>
+            </div>
+            
+            <!-- Quick Stats/Insights -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Cỡ mẫu ($n$)</span>
+                    <span class="stat-value">$n \to \infty$</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Dạng phân phối</span>
+                    <span class="stat-value">Chuẩn $N(\mu, \sigma^2/n)$</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Quy tắc chuẩn</span>
+                    <span class="stat-value">$n \ge 30$</span>
+                </div>
+            </div>
         </section>
 
-        <aside class="card">
-            <h2>Cach quan sat</h2>
-            <ol>
-                <li>So sanh cac kich thuoc mau n.</li>
-                <li>Quan sat histogram cua trung binh mau.</li>
-                <li>Danh gia xu huong tien ve dang chuong.</li>
+        <!-- Sidebar Guide -->
+        <aside class="card guide-card">
+            <div class="card-header">
+                <h2><i class="fa-solid fa-list-check"></i> Cách quan sát</h2>
+            </div>
+            <ol class="step-list">
+                <li class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <strong>So sánh kích thước mẫu</strong>
+                        <p>Quan sát sự thay đổi của đồ thị khi tăng biến $n$ từ nhỏ đến lớn.</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <strong>Quan sát Histogram</strong>
+                        <p>Theo dõi hình dạng của biểu đồ cột biểu diễn trung bình mẫu.</p>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <strong>Đánh giá xu hướng</strong>
+                        <p>Nhận xét sự hội tụ về đường cong đối xứng hình chuông (Phân phối chuẩn).</p>
+                    </div>
+                </li>
             </ol>
+            
+            <div class="callout-box">
+                <i class="fa-solid fa-lightbulb"></i>
+                <p><strong>Ghi chú:</strong> Bất kể phân phối ban đầu là gì, trung bình mẫu luôn xấp xỉ phân phối chuẩn khi $n$ đủ lớn!</p>
+            </div>
         </aside>
     </main>
+
 </body>
 </html>
