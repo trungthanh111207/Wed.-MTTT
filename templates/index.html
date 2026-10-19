@@ -1,108 +1,22 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mô phỏng biến động giá chứng khoán theo ngày - Trực quan hóa dữ liệu tài chính">
-    <title>Mô phỏng Biến động Giá Chứng khoán</title>
-    
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
-</head>
-<body>
-
-    <!-- Header Section -->
-    <header class="hero">
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-        </div>
-        <div class="container hero-content">
-            <span class="eyebrow"><i class="fa-solid fa-chart-line"></i> Phân Tích & Dự Báo Tài Chính</span>
-            <h1>Mô phỏng Biến động Giá Chứng khoán</h1>
-            <p>Trực quan hóa diễn biến thị trường theo nến Nhật, chu kỳ giá đóng cửa, giá trần/sàn và đường xu hướng trong 365 ngày giao dịch.</p>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container grid">
-        <!-- Video Section -->
-        <section class="card video-card">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-circle-play"></i> Video Mô Phỏng Thị Trường</h2>
-                <span class="badge">Live Animation</span>
-            </div>
-            <div class="video-wrapper">
-                <video controls playsinline autoplay loop muted preload="metadata" aria-label="Video mô phỏng biến động giá chứng khoán">
-                    <source src="{{ url_for('static', path='/video/mo_phong.mp4') }}" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ video HTML5.
-                </video>
-            </div>
-            
-            <!-- Quick Stats/Insights -->
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-label">Thời gian mô phỏng</span>
-                    <span class="stat-value">365 Ngày</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Gộp nến (GOM)</span>
-                    <span class="stat-value">5 Ngày / Nến</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Biên độ giá</span>
-                    <span class="stat-value">±10% (Trần/Sàn)</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sidebar Guide -->
-        <aside class="card guide-card">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-chart-pie"></i> Chú Giải & Quy Tắc Màu</h2>
-            </div>
-            <ol class="step-list">
-                <li class="step-item">
-                    <div class="step-number color-violet"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                    <div class="step-content">
-                        <strong>Tím (Violet) - Giá Trần</strong>
-                        <p>Giá đóng cửa chạm mức trần cho phép (+10% so với giá tham chiếu).</p>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-number color-green"><i class="fa-solid fa-caret-up"></i></div>
-                    <div class="step-content">
-                        <strong>Xanh Lá (Green) - Tăng Giá</strong>
-                        <p>Giá đóng cửa phiên tăng cao hơn so với giá tham chiếu.</p>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-number color-red"><i class="fa-solid fa-caret-down"></i></div>
-                    <div class="step-content">
-                        <strong>Đỏ (Red) - Giảm Giá</strong>
-                        <p>Giá đóng cửa phiên thấp hơn so với giá tham chiếu.</p>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-number color-blue"><i class="fa-solid fa-arrow-trend-down"></i></div>
-                    <div class="step-content">
-                        <strong>Xanh Lam (Sky Blue) - Giá Sàn</strong>
-                        <p>Giá đóng cửa chạm mức sàn tối đa (-10% so với giá tham chiếu).</p>
-                    </div>
-                </li>
-            </ol>
-            
-            <div class="callout-box">
-                <i class="fa-solid fa-lightbulb"></i>
-                <p><strong>Ghi chú:</strong> Đồ thị trên biểu diễn nến Nhật gộp 5 ngày, đồ thị dưới mô phỏng đường nối chuỗi giá đóng cửa theo thời gian real-time.</p>
-            </div>
-        </aside>
-    </main>
-
+<main class="container grid">
+<section class="card video-card">
+<h2>Video mo phong</h2>
+<video controls playsinline preload="metadata"
+aria-label="MÔ PHỎNG BIẾN ĐỘNG GIÁ CỦA MỘT MÃ CHỨNG KHOÁN">
+<source
+src="{{ url_for('static', path='/video/Video.mp4') }}"
+type="video/mp4">
+Trinh duyet cua ban khong ho tro video HTML5.
+</video>
+</section>
+<aside class="card">
+<h2>Cach quan sat</h2>
+<ol>
+<li>So sanh cac kich thuoc mau n.</li>
+<li>Quan sat histogram cua trung binh mau.</li>
+<li>Danh gia xu huong tien ve dang chuong.</li>
+</ol>
+</aside>
+</main>
 </body>
 </html>
