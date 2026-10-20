@@ -37,3 +37,22 @@ border-radius: 12px; background: #000; }
 .grid { grid-template-columns: 1fr; }
 .hero { padding-top: 2.5rem; }
 }
+body {
+    background-color: #f4f4f9; /* Màu nền sáng */
+    color: #333; /* Màu chữ tối */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
