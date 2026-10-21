@@ -21,7 +21,7 @@
         }
 
         .main-wrapper {
-            max-width: 1100px;
+            max-width: 900px;
             width: 100%;
         }
 
@@ -49,18 +49,6 @@
             color: #f59e0b;
         }
 
-        .container.grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .container.grid {
-                grid-template-columns: 3fr 2fr;
-            }
-        }
-
         .card {
             background-color: #151a23;
             border: 1px solid #232a36;
@@ -84,17 +72,6 @@
             background-color: #000;
             aspect-ratio: 16 / 9;
         }
-
-        /* Guide list styling */
-        .guide-list {
-            padding-left: 20px;
-            line-height: 1.8;
-            color: #cbd5e1;
-        }
-
-        .guide-list li {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -106,8 +83,8 @@
         <div class="stt">STT: 33</div>
     </header>
 
-    <main class="container grid">
-        <!-- Cột bên trái: Video mô phỏng -->
+    <main>
+        <!-- Chỉ giữ lại Video mô phỏng -->
         <section class="card video-card">
             <h2>Video mô phỏng</h2>
             <video controls playsinline preload="metadata" aria-label="MÔ PHỎNG BIẾN ĐỘNG GIÁ CỦA MỘT MÃ CHỨNG KHOÁN">
@@ -115,16 +92,6 @@
                 Trình duyệt của bạn không hỗ trợ video HTML5.
             </video>
         </section>
-
-        <!-- Cột bên phải: Hướng dẫn quan sát -->
-        <aside class="card">
-            <h2>Cách quan sát</h2>
-            <ol class="guide-list">
-                <li>So sánh các kích thước mẫu n.</li>
-                <li>Quan sát histogram của trung bình mẫu.</li>
-                <li>Đánh giá xu hướng tiến về dạng chuông.</li>
-            </ol>
-        </aside>
     </main>
 </div>
 
