@@ -20,9 +20,36 @@
             justify-content: center;
         }
 
-        .container.grid {
+        .main-wrapper {
             max-width: 1100px;
             width: 100%;
+        }
+
+        /* Header thông tin trường & STT */
+        .header-info {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #151a23;
+            border: 1px solid #232a36;
+            border-radius: 12px;
+        }
+
+        .header-info h1 {
+            font-size: 1.2rem;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .header-info .stt {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f59e0b;
+        }
+
+        .container.grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
@@ -58,90 +85,48 @@
             aspect-ratio: 16 / 9;
         }
 
-        /* Stock list & simulation styling */
-        .stock-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #1e2633;
-        }
-
-        .stock-item:last-child {
-            border-bottom: none;
-        }
-
-        .symbol {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .price {
-            font-family: monospace;
-            font-size: 1.05rem;
-        }
-
-        .up { color: #22c55e; }
-        .down { color: #ef4444; }
-
+        /* Guide list styling */
         .guide-list {
             padding-left: 20px;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #cbd5e1;
         }
 
         .guide-list li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-<main class="container grid">
-    <!-- Cột bên trái: Video mô phỏng -->
-    <section class="card video-card">
-        <h2>Video mô phỏng</h2>
-        <video controls playsinline preload="metadata" aria-label="MÔ PHỎNG BIẾN ĐỘNG GIÁ CỦA MỘT MÃ CHỨNG KHOÁN">
-            <source src="{{ url_for('static', path='/video/Thành.mp4') }}" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video HTML5.
-        </video>
-    </section>
+<div class="main-wrapper">
+    <!-- Header thông tin trường và STT -->
+    <header class="header-info">
+        <h1>TRƯỜNG ĐẠI HỌC SƯ PHẠM - ĐẠI HỌC ĐÀ NẴNG</h1>
+        <div class="stt">STT: 33</div>
+    </header>
 
-    <!-- Cột bên phải: Mô phỏng mã chứng khoán & Hướng dẫn -->
-    <aside class="card">
-        <h2>Bảng giá mô phỏng</h2>
-        <div id="stock-board">
-            <div class="stock-item">
-                <div>
-                    <div class="symbol">FPT</div>
-                    <small style="color: #64748b;">Tập đoàn FPT</small>
-                </div>
-                <div class="price up">128.50 ▲ +1.5%</div>
-            </div>
-            <div class="stock-item">
-                <div>
-                    <div class="symbol">VIC</div>
-                    <small style="color: #8b646400;">Vingroup</small>
-                </div>
-                <div class="price down">45.20 ▼ -0.8%</div>
-            </div>
-            <div class="stock-item">
-                <div>
-                    <div class="symbol">HPG</div>
-                    <small style="color: #8a8b64f0;">Hòa Phát</small>
-                </div>
-                <div class="price up">28.90 ▲ +2.1%</div>
-            </div>
-        </div>
+    <main class="container grid">
+        <!-- Cột bên trái: Video mô phỏng -->
+        <section class="card video-card">
+            <h2>Video mô phỏng</h2>
+            <video controls playsinline preload="metadata" aria-label="MÔ PHỎNG BIẾN ĐỘNG GIÁ CỦA MỘT MÃ CHỨNG KHOÁN">
+                <source src="{{ url_for('static', path='/video/Thành.mp4') }}" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video HTML5.
+            </video>
+        </section>
 
-        <h2 style="margin-top: 25px;">Cách quan sát</h2>
-        <ol class="guide-list">
-            <li>So sánh các kích thước mẫu n.</li>
-            <li>Quan sát histogram của trung bình mẫu.</li>
-            <li>Đánh giá xu hướng tiến về dạng chuông.</li>
-        </ol>
-    </aside>
-</main>
+        <!-- Cột bên phải: Hướng dẫn quan sát -->
+        <aside class="card">
+            <h2>Cách quan sát</h2>
+            <ol class="guide-list">
+                <li>So sánh các kích thước mẫu n.</li>
+                <li>Quan sát histogram của trung bình mẫu.</li>
+                <li>Đánh giá xu hướng tiến về dạng chuông.</li>
+            </ol>
+        </aside>
+    </main>
+</div>
 
 </body>
 </html>
